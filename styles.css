@@ -34,7 +34,7 @@ h1, h2, h3 {
 /* id selector */
 #main-header {
     background-color: hsl(212, 6%, 57%); /* hsl color */
-    color: white;
+    color: color(display-p3 0.2 0.2 0.2);
     padding-top: 10px;               /* padding longhand */
     padding-right: 15px;
     padding-bottom: 10px;
@@ -103,7 +103,7 @@ nav {
     align-items: center;
     gap: 2rem;
     background-color: #1a334d;                        /* fallback */
-    background-color: color(display-p3 0.1 0.2 0.35);   /* wider-gamut color */
+    background-color: rgb(26, 51, 89);
     position: sticky;                                   /* position: sticky */
     top: 0;
     padding: 10px;
