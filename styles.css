@@ -1,0 +1,251 @@
+/* styles.css - Lab 3 */
+
+/* google font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* css variables */
+:root {
+    --primary: #2c3e50;
+    --bg: #f4f4f4;
+}
+
+/* universal selector */
+* {
+    box-sizing: border-box;
+}
+
+/* element selector */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;       /* hex color */
+    color: var(--primary, black);     /* css variable + fallback */
+    min-width: 300px;                 /* absolute: px */
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+
+/* selector list */
+h1, h2, h3 {
+    color: rgb(44, 62, 80);          /* rgb color */
+    text-align: center;
+}
+
+/* id selector */
+#main-header {
+    background-color: hsl(212, 6%, 57%); /* hsl color */
+    color: white;
+    padding-top: 10px;               /* padding longhand */
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border-radius: 8px;
+    margin-bottom: 1rem;             /* relative: rem */
+}
+
+/* class selector */
+.image {
+    text-align: center;
+    margin: 10px;               /* margin shorthand + auto */
+}
+
+/* combining element + class */
+div.image {
+    padding: 8px 0;                  /* padding shorthand */
+}
+
+/* descendant combinator */
+.image img {
+    width: 300px;                    /* absolute: px */
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #ccc;         /* border shorthand */
+}
+
+/* child combinator */
+main > section {
+    margin-top: 12px;                /* margin longhand */
+    margin-right: 0;
+    margin-bottom: 12px;
+    margin-left: 0;
+}
+
+/* content section styling */
+.content-section {
+    border-style: solid;             /* border longhand */
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 6px;
+    padding: 12pt 16pt;              /* absolute: pt */
+    background-color: white;
+}
+
+/* adjacent sibling combinator */
+h2 + ul {
+    padding-left: 1.5em;             /* relative: em */
+    margin-left: 2rem;
+}
+
+ul, ol {
+    margin-left: 2rem;
+}
+
+/* general sibling combinator */
+h2 ~ p {
+    color: hsl(0, 0%, 45%);
+    font-size: 0.9rem;
+}
+
+/* nav - flexbox + sticky position */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: #1a334d;                        /* fallback */
+    background-color: color(display-p3 0.1 0.2 0.35);   /* wider-gamut color */
+    position: sticky;                                   /* position: sticky */
+    top: 0;
+    padding: 10px;
+    z-index: 10;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;           /* text-decoration */
+}
+
+/* attribute selector */
+a[href="index.html"] {
+    color: orange;                   /* color name */
+}
+
+/* pseudo-class :hover */
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* button base */
+button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* pseudo-class :hover */
+button:hover {
+    background-color: color-mix(in srgb, #2c3e50 60%, white); /* color-mix */
+    cursor: pointer;
+}
+
+/* pseudo-class :active */
+button:active {
+    background-color: rgba(44, 62, 80, 0.7); /* rgba */
+}
+
+/* display: inline-block */
+footer p {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* display: none */
+.draft-label {
+    display: none;
+}
+
+/* main sizing */
+main {
+    max-width: 900px;                /* max-width */
+    width: 90%;                      /* relative: % */
+    margin: 0 auto;                  /* margin auto */
+    position: relative;              /* position: relative */
+    font-size: 1.1rem;
+}
+
+/* grid layout for topic cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(80px, auto);
+    margin: 1rem 0;
+}
+
+.card {
+    background-color: white;
+    padding: 0.3cm;                  /* absolute: cm */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 80px;                    /* height */
+    min-width: 100px;                /* min-width */
+}
+
+/* center video and audio */
+video, audio {
+    display: block;
+    margin: 10px auto;
+}
+
+/* :has() selector */
+section:has(ol) {
+    background-color: hsla(210, 30%, 95%, 1); /* hsla */
+    padding: 12px;
+    border-radius: 6px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* nested selectors */
+form {
+    margin: 1rem 0;
+
+    & fieldset {
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    & input[type="text"] {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+    }
+}
+
+/* media queries */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: block;              /* display: block */
+    }
+
+    main {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

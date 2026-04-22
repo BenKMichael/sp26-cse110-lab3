@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 2 : Benjamin Michael</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- style element example -->
+    <style>
+        hr { border-color: #2c3e50; opacity: 0.4; }
+    </style>
   </head>
+
   <body>
 
     <nav>
-        <a href="index.html">Home</a><br>
-        <a href="SUUUUUUUUUUUU.jpg">DO NOT CLICK</a>
+        <a href="index.html">Home</a>
+        <a href="media/SUUUUUUUUUUUU.jpg">DO NOT CLICK</a>
+        <a href="#">About</a>
     </nav>
 
-    <header>
+    <main>
+
+    <header id="main-header">
     <h1>B2B SAAS Startup Thinktank Symposium</h1>
     <h2>"Next Generation Thinking"</h2>
     <h3>4/16/26</h3>
+    <span class="draft-label">DRAFT</span>
     </header>
     <hr>
 
     <div class="image">
-        <img src="spock.webp" alt="smartguy.jpg">
+        <img src="media/spock.webp" alt="smartguy.jpg">
     </div>
 
     <section>
@@ -33,7 +51,7 @@
     </section>
     <hr>
 
-    <section>
+    <section class="content-section">
     <h2>Action Items:</h2>
     <ul>
         <li>BS Topic: Rerouting power to thrusters as a service</li>
@@ -42,48 +60,64 @@
         <li>Schedule Tribble pest control</li>
         <li>Blueprint coffee with the Borg event</li>
     </ul>
+
     <h2>Unfinished Business</h2>
     <ul>
         <li>Missed bi-centennial Khan checkup</li>
         <li>"<b>That</b>" issue with the IRS</li>
     </ul>
+
     <h2>Future Enterprises</h2>
     <ul>
         <li>Expand into Klingon markets</li>
         <li>Youth phaser production and marketing <em>(stun)</em></li>
     </ul>
+
     <h2>Comments</h2>
     <details>
         <summary>Tribbles in a suit: <i>"trrrrrr prrrrrrrrr prrrrrr frrrrrr"</i></summary>
             <p>Translation: <i>"A person who thinks all the time has nothing to think about except thoughts"</i></p>
     </details>
+
     <details>
-        <summary>John Startrek: <i>"Lets circle back and reevaluate our trajectory moving forward"</i></summary>
-            <p>Translation: <i>"trrrrrr prrrrrrrrr prrrrrr frrrrrr"</i></p>
+        <summary>John Startrek:
+            <span><i>"Lets circle back and reevaluate our trajectory moving forward"</i></span>
+        </summary>
+        <p>Translation: <i>"trrrrrr prrrrrrrrr prrrrrr frrrrrr"</i></p>
     </details>
     </section>
     <hr>
-    
+
+    <h2>Topic Cards</h2>
+    <div class="card-grid">
+        <div class="card">Thrusters as a Service</div>
+        <div class="card">Holodeck Wrapper</div>
+        <div class="card">Tribble Management</div>
+    </div>
+
     <h2>Media</h2>
     <h3>Symposium Recording:</h3>
     <video controls width="400">
-        <source src="coldsweat.mp4" type="video/mp4">
+        <source src="media/coldsweat.mp4" type="video/mp4">
     </video>
 
     <h3>Audio Log</h3>
     <audio controls>
-        <source src="coldsweat.mp4" type="audio/mp4">
+        <source src="media/coldsweat.mp4" type="audio/mp4">
     </audio>
 
+    </main>
+
     <footer>
-        <p>© 2026 Benjamin Michael</p>
+        <p>© 2026 <span>Benjamin Michael</span></p>
         <p>All rights reserved</p>
     </footer>
 
     <hr>
-    <h2>Symposium Feedback Transmission</h2>
+    <!-- inline style example -->
+    <h2 style="margin-top: 20px; color: #c0392b;">Symposium Feedback Transmission</h2>
 
-    <form>
+    <form id="feedback-form">
       <fieldset>
         <legend>Participant Input</legend>
 
